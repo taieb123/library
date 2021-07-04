@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AuteurController extends AbstractController
 {
     /**
-     * @Route("/", name="auteur_index", methods={"GET"})
+     * @Route("/", name="auteur_index")
      */
     public function index(AuteurRepository $auteurRepository): Response
     {

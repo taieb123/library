@@ -24,4 +24,5 @@ class EditeurType extends AbstractType
             'data_class' => Editeur::class,
         ]);
     }
+    
 }
