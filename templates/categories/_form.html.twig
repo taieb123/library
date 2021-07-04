@@ -1,4 +1,35 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="card-title">
+                <div class="title">Form Categories</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+            {{ form_start(form) }}
+
+            <!-- designation field -->
+            <div class="sub-title">{{ form_label(form.designation, '') }}</div>
+            <div>
+                {{ form_widget(form.designation, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- description field -->
+            <div class="sub-title">{{ form_label(form.description, '') }}</div>
+            <div>
+                {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+    
+
+            {{ form_widget(form) }}
+            <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
