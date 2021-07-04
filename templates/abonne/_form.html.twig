@@ -1,4 +1,51 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="card-title">
+                <div class="title">Form Abboné</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+            {{ form_start(form) }}
+
+            <!-- prenom field -->
+            <div class="sub-title">{{ form_label(form.prenom, '') }}</div>
+            <div>
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- nom field -->
+            <div class="sub-title">{{ form_label(form.nom, '') }}</div>
+            <div>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+           <div class="sub-title">{{ form_label(form.adress, '') }}</div>
+            <div>
+                {{ form_widget(form.adress,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="sub-title">{{ form_label(form.email, '') }}</div>
+            <div>
+                {{ form_widget(form.email,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- num_tel field -->
+            <div class="form-group">
+                <div class="sub-title">{{ form_label(form.num_tel, '') }}</div>
+                <div>
+                    {{ form_widget(form.num_tel, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+
+            {{ form_widget(form) }}
+            <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

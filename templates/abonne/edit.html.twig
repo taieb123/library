@@ -3,11 +3,19 @@
 {% block title %}Edit Abonne{% endblock %}
 
 {% block body %}
-    <h1>Edit Abonne</h1>
 
     {{ include('abonne/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('abonne_index') }}">back to list</a>
 
-    {{ include('abonne/_delete_form.html.twig') }}
+    <div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="d-flex">
+                <a href="{{ path('abonne_index') }}" class="btn btn-default mr-20">back to list</a>
+               {{ include('abonne/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

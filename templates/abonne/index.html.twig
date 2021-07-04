@@ -3,41 +3,52 @@
 {% block title %}Abonne index{% endblock %}
 
 {% block body %}
-    <h1>Abonne index</h1>
+  
+  <div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Auteurs</h2>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                           <th>Id</th>
+                            <th>Prenom</th>
+                            <th>Nom</th>
+                            <th>Adress</th>
+                            <th>Email</th>
+                            <th>Num_tel</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {% for abonne in abonnes %}
+                        <tr>
+                            <td>{{ abonne.id }}</td>
+                            <td>{{ abonne.prenom }}</td>
+                            <td>{{ abonne.nom }}</td>
+                            <td>{{ abonne.adress }}</td>
+                            <td>{{ abonne.email }}</td>
+                            <td>{{ abonne.numTel }}</td>
+                            <td>
+                                <a href="{{ path('abonne_show', {'id': abonne.id}) }}" class="btn btn-info">show</a>
+                                <a href="{{ path('abonne_edit', {'id': abonne.id}) }}" class="btn btn-warning">edit</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6">no records found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('abonne_new') }}" class="btn btn-success">Create new</a>
+        </div>
+    </div>
+</div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Prenom</th>
-                <th>Nom</th>
-                <th>Adress</th>
-                <th>Email</th>
-                <th>Num_tel</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for abonne in abonnes %}
-            <tr>
-                <td>{{ abonne.id }}</td>
-                <td>{{ abonne.prenom }}</td>
-                <td>{{ abonne.nom }}</td>
-                <td>{{ abonne.adress }}</td>
-                <td>{{ abonne.email }}</td>
-                <td>{{ abonne.numTel }}</td>
-                <td>
-                    <a href="{{ path('abonne_show', {'id': abonne.id}) }}">show</a>
-                    <a href="{{ path('abonne_edit', {'id': abonne.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('abonne_new') }}">Create new</a>
 {% endblock %}
