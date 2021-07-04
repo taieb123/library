@@ -23,17 +23,11 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Libraries Admin</p>
-        </div>
-    </div>
 
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
+    <div id="wrapperr">
 
         {{ include('header.html.twig') }}
 
@@ -42,30 +36,24 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="header">
+                <h1 class="page-header">
+                    Dashboard <small>Welcome John Doe</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li class="active">Data</li>
+                </ol>
 
-             <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Blank Page</h4>
-                    </div>
-                    <div class="col-md-7 align-self-center text-right">
-                        <div class="d-flex justify-content-end align-items-center">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li>
-                            </ol>
-                            <button type="button" class="btn btn-success d-none d-lg-block m-l-15"> Upgrade To Pro</button>
-                        </div>
-                    </div>
-                </div>
-                {% block body %}{% endblock %}
             </div>
+
+            <div id="page-inner">
+                <div class="row">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+          
         </div>
 
     </div>
