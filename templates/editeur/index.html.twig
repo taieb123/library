@@ -2,38 +2,56 @@
 
 {% block title %}Editeur index{% endblock %}
 
+{% block pageTitle %}List Editeur{% endblock %}
+
 {% block body %}
-    <h1>Editeur index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Designation</th>
-                <th>Email</th>
-                <th>Pays</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for editeur in editeurs %}
-            <tr>
-                <td>{{ editeur.id }}</td>
-                <td>{{ editeur.designation }}</td>
-                <td>{{ editeur.email }}</td>
-                <td>{{ editeur.pays }}</td>
-                <td>
-                    <a href="{{ path('editeur_show', {'id': editeur.id}) }}">show</a>
-                    <a href="{{ path('editeur_edit', {'id': editeur.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Editeur</h2>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Designation</th>
+                            <th>Email</th>
+                            <th>Pays</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for editeur in editeurs %}
+                        <tr>
+                            <td>{{ editeur.id }}</td>
+                            <td>{{ editeur.designation }}</td>
+                            <td>{{ editeur.email }}</td>
+                            <td>{{ editeur.pays }}</td>
+                            <td>
+                                <a href="{{ path('editeur_show', {'id': editeur.id}) }}" class="btn btn-info">show</a>
+                                <a href="{{ path('editeur_edit', {'id': editeur.id}) }}" class="btn btn-warning">edit</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('editeur_new') }}" class="btn btn-success">Create new</a>
+        </div>
+    </div>
+</div>
 
-    <a href="{{ path('editeur_new') }}">Create new</a>
+
+
+
+
+
 {% endblock %}
