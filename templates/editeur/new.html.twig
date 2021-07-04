@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}New Editeur{% endblock %}
+{% block pageTitle %}Ajouter nouvel auteur{% endblock %}
+
 
 {% block body %}
-    <h1>Create new Editeur</h1>
 
     {{ include('editeur/_form.html.twig') }}
+    <div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="d-flex">
+            <a href="{{ path('editeur_index') }}" class="btn btn-default">back to list</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <a href="{{ path('editeur_index') }}">back to list</a>
+    
 {% endblock %}
