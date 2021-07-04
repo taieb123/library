@@ -1,4 +1,63 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="card-title">
+                <div class="title">Form livre</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+
+            {{ form_start(form) }}
+
+            <!-- titre field -->
+            <div class="sub-title">{{ form_label(form.titre, '') }}</div>
+            <div>
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- ISBN field -->
+            <div class="sub-title">{{ form_label(form.isbn, '') }}</div>
+            <div>
+                {{ form_widget(form.isbn, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- ISBN field -->
+            <div class="sub-title">{{ form_label(form.prix, '') }}</div>
+            <div>
+                {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+
+            <!-- Numero examplaire field -->
+            <div class="sub-title">{{ form_label(form.nbr_examplaire, '') }}</div>
+            <div>
+                {{ form_widget(form.nbr_examplaire, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- Numero examplaire field -->
+            <div class="sub-title">{{ form_label(form.photo, '') }}</div>
+            <div>
+                {{ form_widget(form.photo, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+
+            <div class="sub-title">{{ form_label(form.date_edition, '') }}</div>
+            <div>
+                {{ form_widget(form.date_edition, {'attr': {'class': 'selectbox'}}) }}
+            </div>
+
+            <div class="sub-title">{{ form_label(form.editeur, '') }}</div>
+            <div class="form-group">
+                {{ form_widget(form.editeur, {'attr': {'class': 'selectbox'}}) }}
+            </div>
+
+            <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</div>
