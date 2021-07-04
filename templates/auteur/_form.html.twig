@@ -1,4 +1,51 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="card-title">
+                <div class="title">Form Auteur</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+            {{ form_start(form) }}
+
+            <!-- Nom field -->
+            <div class="sub-title">{{ form_label(form.nom, '') }}</div>
+            <div>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- Prenom field -->
+            <div class="sub-title">{{ form_label(form.prenom, '') }}</div>
+            <div>
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+           <div class="sub-title">{{ form_label(form.date_naissance, '') }}</div>
+            <div>
+                {{ form_widget(form.date_naissance) }}
+            </div>
+
+            <div class="sub-title">{{ form_label(form.livre, '') }}</div>
+            <div>
+                {{ form_widget(form.livre, {'attr': {'class': 'selectbox'}}) }}
+            </div>
+
+            <!-- Pays field -->
+            <div class="form-group">
+                <div class="sub-title">{{ form_label(form.pays, '') }}</div>
+                <div>
+                    {{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+
+            {{ form_widget(form) }}
+            <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

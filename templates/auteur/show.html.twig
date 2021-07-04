@@ -3,36 +3,56 @@
 {% block title %}Auteur{% endblock %}
 
 {% block body %}
-    <h1>Auteur</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ auteur.id }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ auteur.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ auteur.nom }}</td>
-            </tr>
-            <tr>
-                <th>Date_naissance</th>
-                <td>{{ auteur.dateNaissance ? auteur.dateNaissance|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Pays</th>
-                <td>{{ auteur.pays }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+                <div class="card-title">
+                    <div class="title">Auteur</div>
+                </div>
+        </div>
+        <div class="panel-body">
+             <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ auteur.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prenom</th>
+                        <td>{{ auteur.prenom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ auteur.nom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date_naissance</th>
+                        <td>{{ auteur.dateNaissance ? auteur.dateNaissance|date('Y-m-d') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pays</th>
+                        <td>{{ auteur.pays }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    
 
-    <a href="{{ path('auteur_index') }}">back to list</a>
+<div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="d-flex">
+                <a href="{{ path('auteur_index') }}" class="btn btn-default mr-20" >back to list</a>
+                <a href="{{ path('auteur_edit', {'id': auteur.id}) }}" class="btn btn-warning mr-20">edit</a>
 
-    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
-
-    {{ include('auteur/_delete_form.html.twig') }}
+                {{ include('auteur/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

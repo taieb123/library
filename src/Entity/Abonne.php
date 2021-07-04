@@ -106,4 +106,9 @@ class Abonne
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->nom." ".$this->prenom;
+    }
 }
