@@ -2,10 +2,22 @@
 
 {% block title %}New Livre{% endblock %}
 
+{% block pageTitle %}Ajouter Nouvel livre{% endblock %}
+
+
 {% block body %}
-    <h1>Create new Livre</h1>
 
-    {{ include('livre/_form.html.twig') }}
+{{ include('livre/_form.html.twig') }}
 
-    <a href="{{ path('livre_index') }}">back to list</a>
+<div class="col-md-12">
+    <!-- Advanced Tables -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="d-flex">
+                <a href="{{ path('livre_index') }}" class="btn btn-default">back to list</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
